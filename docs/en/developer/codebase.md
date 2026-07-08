@@ -63,7 +63,7 @@ Meshtastic-Android/
 │   ├── convention/
 │   └── flatpak/
 ├── docs/                   # Documentation source (markdown)
-│   └── en/                 # English sources (translations land in docs/{lang}/)
+│   └── en/                 # English source; translated user guides live under docs/<locale>/user/
 │       ├── user/
 │       └── developer/
 ├── gradle/                 # Gradle wrapper and version catalog
