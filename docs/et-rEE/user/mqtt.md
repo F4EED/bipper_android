@@ -87,11 +87,11 @@ Kui kaardiaruandlus on lubatud, avaldab sõlm oma asukoha Meshtasticu kogukonnak
 
 Konfi iga kanali kohta, millised suunad on aktiivsed, et kontrollida sõnumivoogu ja eetriaega.
 
-## Message Formats
+## Sõnumivormingud
 
 MQTT kasutab protobuf-sõnumivormingut:
 
-| Format       | Kirjeldus                              | Use case                   |
+| Vorming      | Kirjeldus                              | Use case                   |
 | ------------ | -------------------------------------- | -------------------------- |
 | **Protobuf** | Binaarne Meshtastic protobuf kodeering | Node-to-node mesh bridging |
 

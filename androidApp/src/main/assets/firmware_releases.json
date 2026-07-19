@@ -189,6 +189,48 @@
   },
   "pullRequests": [
     {
+      "id": "11067",
+      "title": "Add Waveshare ESP32-C3-Zero DIY variant",
+      "page_url": "https://github.com/meshtastic/firmware/pull/11067",
+      "zip_url": "https://discord.com/invite/meshtastic"
+    },
+    {
+      "id": "11066",
+      "title": "chore(deps): update adafruit ina219 to v2",
+      "page_url": "https://github.com/meshtastic/firmware/pull/11066",
+      "zip_url": "https://img.shields.io/badge/Flash_this_PR_in_the_Web_Flasher-2C2D3C?style=for-the-badge"
+    },
+    {
+      "id": "11064",
+      "title": "chore(deps): update sensorlib to v0.4.1",
+      "page_url": "https://github.com/meshtastic/firmware/pull/11064",
+      "zip_url": "https://img.shields.io/badge/Flash_this_PR_in_the_Web_Flasher-2C2D3C?style=for-the-badge"
+    },
+    {
+      "id": "11063",
+      "title": "chore(deps): update python to v3.14.6",
+      "page_url": "https://github.com/meshtastic/firmware/pull/11063",
+      "zip_url": "https://img.shields.io/badge/Flash_this_PR_in_the_Web_Flasher-2C2D3C?style=for-the-badge"
+    },
+    {
+      "id": "11062",
+      "title": "fix(t5s3-epaper): 40MHz octal PSRAM; guard EInk init; esp32s3 sw-atomic shim",
+      "page_url": "https://github.com/meshtastic/firmware/pull/11062",
+      "zip_url": "https://img.shields.io/badge/Flash_this_PR_in_the_Web_Flasher-2C2D3C?style=for-the-badge"
+    },
+    {
+      "id": "11061",
+      "title": "Backlight: unify E-Ink backlight logic and fix ThinkNode M1 wake",
+      "page_url": "https://github.com/meshtastic/firmware/pull/11061",
+      "zip_url": "https://discord.com/invite/meshtastic"
+    },
+    {
+      "id": "11050",
+      "title": "TMM extend to ephemeral 3rd tier store",
+      "page_url": "https://github.com/meshtastic/firmware/pull/11050",
+      "zip_url": "https://img.shields.io/badge/Flash_this_PR_in_the_Web_Flasher-2C2D3C?style=for-the-badge"
+    },
+    {
       "id": "11042",
       "title": "meshnology-w10: define HAS_SPI_TFT so the TFT screen initializes again",
       "page_url": "https://github.com/meshtastic/firmware/pull/11042",
@@ -198,12 +240,6 @@
       "id": "11031",
       "title": "Add native Windows build of meshtasticd",
       "page_url": "https://github.com/meshtastic/firmware/pull/11031",
-      "zip_url": "https://img.shields.io/badge/Flash_this_PR_in_the_Web_Flasher-2C2D3C?style=for-the-badge"
-    },
-    {
-      "id": "11025",
-      "title": "Stop accelerometer thread when double-tap/wake-on-motion disabled at runtime",
-      "page_url": "https://github.com/meshtastic/firmware/pull/11025",
       "zip_url": "https://img.shields.io/badge/Flash_this_PR_in_the_Web_Flasher-2C2D3C?style=for-the-badge"
     },
     {

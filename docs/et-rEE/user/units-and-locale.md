@@ -100,10 +100,10 @@ Some units are international standards and are displayed the same way regardless
 
 All timestamps throughout the app — last heard, message times, telemetry logs, chart axes — follow your device's date and time preferences.
 
-| Sätted           | What It Controls | Example                                          |
-| ---------------- | ---------------- | ------------------------------------------------ |
-| **24-Hour Time** | Clock format     | 14:30 vs 2:30 PM |
-| **Date Format**  | Date ordering    | 09/05/2026 vs 05/09/2026                         |
+| Sätted               | What It Controls | Example                                          |
+| -------------------- | ---------------- | ------------------------------------------------ |
+| **24-Hour Time**     | Kella vorming    | 14:30 vs 2:30 PM |
+| **Kuupäeva vorming** | Date ordering    | 09/05/2026 vs 05/09/2026                         |
 
 The app also uses **relative time** where it makes sense — for example, "5 min ago" or "2 hours ago" in the node list — which is automatically localised into your device language.
 

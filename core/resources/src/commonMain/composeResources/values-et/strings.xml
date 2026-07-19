@@ -356,6 +356,9 @@
     <string name="desktop_tray_quit">Sule</string>
     <string name="desktop_tray_show">Näita Meshtastic</string>
     <string name="desktop_tray_tooltip">Meshtastic töölaud</string>
+    <string name="desktop_update_available_message">Meshtastic töölaud %1$s on allalaadimiseks valmis.</string>
+    <string name="desktop_update_available_title">Rakenduse värskendus on saadaval</string>
+    <string name="desktop_update_download">Lae alla värskendus %1$s</string>
     <string name="details">Üksikasjad</string>
     <string name="detection_sensor">Tuvastusandur</string>
     <string name="detection_sensor_config">Tuvastusanduri sätted</string>
@@ -651,6 +654,7 @@
     <string name="firmware_update_method_usb">USB failiedastus</string>
     <string name="firmware_update_method_wifi">Üle WiFi</string>
     <string name="firmware_update_missing_target">Selle seadme püsivara teave pole saadaval.</string>
+    <string name="firmware_update_nightly">Öösiti</string>
     <string name="firmware_update_no_device">Ühtegi seadet pole ühendatud</string>
     <string name="firmware_update_node_info_missing">Sõlmel puudub kasutajateave.</string>
     <string name="firmware_update_not_found_in_release">Selles versioonis ei leitud püsivara %1$s'le.</string>
@@ -697,6 +701,11 @@
     <string name="flip_screen">Keera ekraani</string>
     <string name="for_more_information_see_our_privacy_policy">Lisateabe saamiseks vaata privaatsuspoliitikat.</string>
     <!-- FORMAT -->
+    <string name="format_bold">Paks</string>
+    <string name="format_code">Code</string>
+    <string name="format_italic">Italic</string>
+    <string name="format_link">Link</string>
+    <string name="format_strikethrough">Läbikriipsutus</string>
     <string name="free_memory">Vaba mälumaht</string>
     <string name="free_memory_description">Saadaolev süsteemimälu baitides</string>
     <string name="freq">Sagedus</string>

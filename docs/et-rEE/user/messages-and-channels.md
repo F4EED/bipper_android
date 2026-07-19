@@ -124,7 +124,7 @@ You can search the full history of any conversation directly from the chat scree
 
 Messages appear as chat bubbles — sent messages on the right, received messages on the left. Each bubble shows the sender, timestamp, and delivery status. Messages with replies include a quoted preview of the original message above the response.
 
-### Text Formatting
+### Teksti vormindamine
 
 Messages support lightweight inline **Markdown**. Received messages render the styling with the syntax characters removed:
 
