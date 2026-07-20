@@ -237,6 +237,8 @@ object DeepLinkRouter {
             "status-message" to SettingsRoute.StatusMessage,
             "tak" to SettingsRoute.TAK,
             "clean-node-db" to SettingsRoute.CleanNodeDb,
+            "bipper-alerts" to SettingsRoute.BipperAlertSend,
+            "bipper" to SettingsRoute.BipperConfig,
             "debug-panel" to SettingsRoute.DebugPanel,
             "about" to SettingsRoute.About,
             "filter-settings" to SettingsRoute.FilterSettings,

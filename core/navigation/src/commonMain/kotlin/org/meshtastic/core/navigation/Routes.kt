@@ -180,6 +180,10 @@ sealed interface SettingsRoute : Route {
 
     @Serializable data object AppFunctionsSettings : SettingsRoute
 
+    @Serializable data object BipperAlertSend : SettingsRoute
+
+    @Serializable data object BipperConfig : SettingsRoute
+
     // endregion
 
     // region help & documentation routes

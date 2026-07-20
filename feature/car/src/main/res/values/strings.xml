@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="car_app_name">Meshtastic</string>
+    <string name="car_app_name">Gaulix_bipper</string>
     <string name="car_dismiss">Dismiss</string>
     <string name="car_disconnected">Disconnected</string>
     <string name="car_emergency_from">⚠️ Emergency from %s</string>

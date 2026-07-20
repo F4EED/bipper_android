@@ -1,7 +1,22 @@
 <p align="center">
+  <img src="core/resources/src/commonMain/composeResources/drawable/gaulix_rond.png" alt="Gaulix" width="120"/>
+</p>
+<h1 align="center">Gaulix_bipper (Android)</h1>
+
+Fork **Gaulix** de [Meshtastic-Android](https://github.com/meshtastic/Meshtastic-Android) : companion + coordinateur d’alertes pour les pagers **Bipper L1 Pro**.
+
+| Doc | Contenu |
+|:----|:--------|
+| **[docs/BIPPER-ANDROID.md](docs/BIPPER-ANDROID.md)** | Fonctions Gaulix, protocole, build APK, accès alerte global |
+| Firmware | [F4EED/Bipper_L1Pro](https://github.com/F4EED/Bipper_L1Pro) — `docs/BIPPER1.md` (v1.10.0+) |
+| Client web | [F4EED/client_web_MT_bipper](https://github.com/F4EED/client_web_MT_bipper) — `docs/BIPPER-WEB.md` |
+
+---
+
+<p align="center">
   <img src=".github/meshtastic_logo.png" alt="Meshtastic Logo" width="200"/>
 </p>
-<h1 align="center">Meshtastic-Android</h1>
+<h1 align="center">Meshtastic-Android (upstream base)</h1>
 
 ![GitHub all releases](https://img.shields.io/github/downloads/meshtastic/meshtastic-android/total)
 [![Android CI](https://github.com/meshtastic/Meshtastic-Android/actions/workflows/pull-request.yml/badge.svg?branch=main)](https://github.com/meshtastic/Meshtastic-Android/actions/workflows/pull-request.yml)

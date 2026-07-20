@@ -19,6 +19,7 @@ package org.meshtastic.core.ui.component
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -39,20 +40,24 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.compositeOver
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.resources.vectorResource
 import org.meshtastic.core.model.Node
 import org.meshtastic.core.resources.Res
-import org.meshtastic.core.resources.ic_meshtastic
+import org.meshtastic.core.resources.bipper_nav_alerts
+import org.meshtastic.core.resources.gaulix_rond
+import org.meshtastic.core.resources.meshtastic_app_name
 import org.meshtastic.core.resources.navigate_back
 import org.meshtastic.core.ui.icon.ArrowBack
 import org.meshtastic.core.ui.icon.MeshtasticIcons
 import org.meshtastic.core.ui.theme.LocalEventTheme
 import org.meshtastic.core.ui.util.EventBrandingIcon
 import org.meshtastic.core.ui.util.LocalEventBranding
+import org.meshtastic.core.ui.util.LocalOpenBipperAlertSend
 
 /** Alpha for the ambient event accent wash over the app bar — subtle enough to keep title text legible. */
 private const val EVENT_ACCENT_ALPHA = 0.12f
@@ -69,6 +74,7 @@ fun MainAppBar(
     onNavigateUp: () -> Unit,
     actions: @Composable () -> Unit,
     onClickChip: (Node) -> Unit,
+    actionsBeforeChip: @Composable () -> Unit = {},
     brandingContent: @Composable () -> Unit = { EventAwareBranding() },
 ) {
     // Ambient event theming: when connected to event firmware (and not opted out), tint the bar with a faint wash of
@@ -119,17 +125,45 @@ fun MainAppBar(
             { brandingContent() }
         },
         actions = {
-            TopBarActions(ourNode = ourNode, showNodeChip = showNodeChip, actions = actions, onClickChip = onClickChip)
+            TopBarActions(
+                ourNode = ourNode,
+                showNodeChip = showNodeChip,
+                actionsBeforeChip = actionsBeforeChip,
+                actions = actions,
+                onClickChip = onClickChip,
+            )
         },
     )
 }
 
-/** Reads [LocalEventBranding] to show event branding (tap → [EventInfoSheet]), or the default Meshtastic logo. */
+/** Reads [LocalEventBranding] to show event branding, or the Gaulix logo (tappable → envoi alerte). */
 @Composable
 private fun EventAwareBranding() {
     val eventEdition = LocalEventBranding.current
+    val openAlertSend = LocalOpenBipperAlertSend.current
     if (eventEdition == null) {
-        Icon(imageVector = vectorResource(Res.drawable.ic_meshtastic), contentDescription = null)
+        val brandingModifier =
+            Modifier.size(32.dp)
+                .clip(CircleShape)
+                .then(
+                    if (openAlertSend != null) {
+                        Modifier.clickable(role = Role.Button, onClick = openAlertSend)
+                    } else {
+                        Modifier
+                    },
+                )
+                .padding(2.dp)
+        Image(
+            painter = painterResource(Res.drawable.gaulix_rond),
+            contentDescription =
+            if (openAlertSend != null) {
+                stringResource(Res.string.bipper_nav_alerts)
+            } else {
+                stringResource(Res.string.meshtastic_app_name)
+            },
+            modifier = brandingModifier,
+            contentScale = ContentScale.Crop,
+        )
         return
     }
     // Every event edition is tappable for its info sheet. The icon prefers the hosted iconUrl, then a bundled
@@ -146,9 +180,12 @@ private fun EventAwareBranding() {
 private fun TopBarActions(
     ourNode: Node?,
     showNodeChip: Boolean,
+    actionsBeforeChip: @Composable () -> Unit,
     actions: @Composable () -> Unit,
     onClickChip: (Node) -> Unit,
 ) {
+    actionsBeforeChip()
+
     AnimatedVisibility(visible = showNodeChip, enter = fadeIn(), exit = fadeOut()) {
         ourNode?.let { node ->
             NodeChip(modifier = Modifier.padding(horizontal = 16.dp), node = node, onClick = onClickChip)

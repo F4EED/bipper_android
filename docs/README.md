@@ -1,6 +1,13 @@
 # Documentation Structure
 
-This directory contains the source documentation for the Meshtastic Android/Desktop/iOS app.
+This directory contains the source documentation for the Meshtastic Android/Desktop/iOS app,
+plus **Gaulix Bipper** product notes for this fork.
+
+| Doc | Audience |
+|:----|:---------|
+| **[BIPPER-ANDROID.md](BIPPER-ANDROID.md)** | Gaulix_bipper — alertes, config pager, build |
+| `en/user/`, `en/developer/` | Guides Meshtastic upstream (in-app + GitHub Pages) |
+
 It serves three consumers:
 
 1. **In-app docs browser** — bundled via Compose Resources at build time

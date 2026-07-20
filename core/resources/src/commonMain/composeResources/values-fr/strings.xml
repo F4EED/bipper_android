@@ -776,7 +776,7 @@
     <!-- MESHTASTIC -->
     <string name="meshtastic">Meshtastic</string>
     <string name="meshtastic_alerts_notifications">Notifications d'alerte</string>
-    <string name="meshtastic_app_name">Meshtastic</string>
+    <string name="meshtastic_app_name">Gaulix_bipper</string>
     <string name="meshtastic_broadcast_notifications">Diffuser les notifications de message</string>
     <string name="meshtastic_low_battery_notifications">Notifications de batterie faible</string>
     <string name="meshtastic_low_battery_temporary_remote_notifications">Notifications de batterie faible (nœuds favoris)</string>

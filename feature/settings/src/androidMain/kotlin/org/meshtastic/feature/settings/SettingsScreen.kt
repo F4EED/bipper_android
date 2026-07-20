@@ -51,6 +51,8 @@ import org.meshtastic.core.navigation.WifiProvisionRoute
 import org.meshtastic.core.resources.Res
 import org.meshtastic.core.resources.app_functions_settings
 import org.meshtastic.core.resources.app_functions_settings_summary
+import org.meshtastic.core.resources.bipper_nav_alerts
+import org.meshtastic.core.resources.bipper_nav_config
 import org.meshtastic.core.resources.bottom_nav_settings
 import org.meshtastic.core.resources.device_links
 import org.meshtastic.core.resources.discovery_local_mesh
@@ -70,8 +72,10 @@ import org.meshtastic.core.ui.icon.FilterList
 import org.meshtastic.core.ui.icon.HelpOutline
 import org.meshtastic.core.ui.icon.List
 import org.meshtastic.core.ui.icon.MeshtasticIcons
+import org.meshtastic.core.ui.icon.Notifications
 import org.meshtastic.core.ui.icon.PermScanWifi
 import org.meshtastic.core.ui.icon.SettingsRemote
+import org.meshtastic.core.ui.icon.Warning
 import org.meshtastic.core.ui.icon.Wifi
 import org.meshtastic.feature.settings.component.AppInfoSection
 import org.meshtastic.feature.settings.component.AppearanceSection
@@ -245,6 +249,21 @@ fun SettingsScreen(
 
             // App-local settings are only relevant when configuring the local node
             if (state.isLocal) {
+                ExpressiveSection(title = stringResource(Res.string.bipper_nav_alerts)) {
+                    ListItem(
+                        text = stringResource(Res.string.bipper_nav_alerts),
+                        leadingIcon = MeshtasticIcons.Notifications,
+                    ) {
+                        onNavigate(SettingsRoute.BipperAlertSend)
+                    }
+                    ListItem(
+                        text = stringResource(Res.string.bipper_nav_config),
+                        leadingIcon = MeshtasticIcons.Warning,
+                    ) {
+                        onNavigate(SettingsRoute.BipperConfig)
+                    }
+                }
+
                 PrivacySection(
                     analyticsAvailable = appFunctionsAvailable,
                     analyticsEnabled = viewModel.analyticsAllowedFlow.collectAsStateWithLifecycle(true).value,

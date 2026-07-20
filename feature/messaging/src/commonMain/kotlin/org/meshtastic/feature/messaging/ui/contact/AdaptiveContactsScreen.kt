@@ -22,9 +22,11 @@ import androidx.navigation3.runtime.NavKey
 import kotlinx.coroutines.flow.Flow
 import org.koin.compose.viewmodel.koinViewModel
 import org.meshtastic.core.common.util.CommonUri
+import androidx.lifecycle.compose.dropUnlessResumed
 import org.meshtastic.core.navigation.ChannelsRoute
 import org.meshtastic.core.navigation.ContactsRoute
 import org.meshtastic.core.navigation.NodesRoute
+import org.meshtastic.core.navigation.SettingsRoute
 import org.meshtastic.core.ui.component.ScrollToTopEvent
 
 @Composable
@@ -42,6 +44,7 @@ fun AdaptiveContactsScreen(
         onClickNodeChip = { backStack.add(NodesRoute.NodeDetail(it)) },
         onNavigateToMessages = { contactKey -> backStack.add(ContactsRoute.Messages(contactKey)) },
         onNavigateToNodeDetails = { backStack.add(NodesRoute.NodeDetail(it)) },
+        onNavigateToAlertSend = dropUnlessResumed { backStack.add(SettingsRoute.BipperAlertSend) },
         scrollToTopEvents = scrollToTopEvents,
         activeContactKey = null,
     )

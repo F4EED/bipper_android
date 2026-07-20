@@ -127,6 +127,66 @@
     <string name="baro_pressure">Baro</string>
     <string name="battery">Battery</string>
     <string name="battery_ina_2xx_i2c_address">Battery INA_2XX I2C address</string>
+    <!-- BIPPER -->
+    <string name="bipper_config_not_bipper_warning">L\'appareil connecté ne semble pas être un Bipper L1 — les paramètres Gaulix peuvent ne pas s\'appliquer.</string>
+    <string name="bipper_config_page_description">Réglages pager Gaulix pour le Seeed Wio Tracker L1 Pro.</string>
+    <string name="bipper_config_page_title">Paramétrer le Bipper</string>
+    <string name="bipper_gaulix_beep_apply">Enregistrer</string>
+    <string name="bipper_gaulix_beep_description">Enregistré en NVS (#b N). Le son d\'alerte reste pim-pom continu.</string>
+    <string name="bipper_gaulix_beep_label">Nombre (0 = continu)</string>
+    <string name="bipper_gaulix_beep_title">Nombre de bips (legacy)</string>
+    <string name="bipper_gaulix_code_apply">Mettre à jour le code</string>
+    <string name="bipper_gaulix_code_description">Équivalent à la commande #code ANCIEN NOUVEAU.</string>
+    <string name="bipper_gaulix_code_new">Nouveau code</string>
+    <string name="bipper_gaulix_code_old">Code actuel</string>
+    <string name="bipper_gaulix_code_title">Code d\'activation</string>
+    <string name="bipper_gaulix_description">T1–T4 = jusqu\'à 4 entités d\'appartenance. Format alerte : #alerte &lt;texte&gt; #appartenance.</string>
+    <string name="bipper_gaulix_not_connected">Connectez un Bipper en USB ou Bluetooth pour configurer le pager Gaulix.</string>
+    <string name="bipper_gaulix_status_alerts">Alertes</string>
+    <string name="bipper_gaulix_status_battery">Batterie</string>
+    <string name="bipper_gaulix_status_beeps">Bips</string>
+    <string name="bipper_gaulix_status_code">Code</string>
+    <string name="bipper_gaulix_status_empty">Cliquez sur Actualiser pour interroger le pager (#status).</string>
+    <string name="bipper_gaulix_status_refresh">Actualiser</string>
+    <string name="bipper_gaulix_status_state">État</string>
+    <string name="bipper_gaulix_status_tag">Entités (T1–T4)</string>
+    <string name="bipper_gaulix_status_title">État du pager</string>
+    <string name="bipper_gaulix_tag_apply">Enregistrer les appartenances</string>
+    <string name="bipper_gaulix_tag_description">Jusqu\'à 4 entités par Bipper (ex. T1=SDIS42). Laisser vide = slot inutilisé. T1=all = reçoit tout.</string>
+    <string name="bipper_gaulix_tag_hint">Exemple : #alerte incendie #test → bipe si T1–T4 contient test (ou all).</string>
+    <string name="bipper_gaulix_tag_placeholder">ex. SDIS42</string>
+    <string name="bipper_gaulix_tag_title">Appartenance aux entités (T1–T4)</string>
+    <string name="bipper_gaulix_title">Pager Gaulix</string>
+    <string name="bipper_gaulix_usb_hint">Firmware : #alerte|#secours|#vigilance|#info … #tag / #fin #tag. Sans #appartenance → tous les bippers.</string>
+    <string name="bipper_nav_alerts">Envoi alerte</string>
+    <string name="bipper_nav_config">Paramétrer le Bipper</string>
+    <string name="bipper_send_affiliation_hint">Contrôlée à la réception contre T1–T4 du Bipper.</string>
+    <string name="bipper_send_affiliation_label">Appartenance (#…)</string>
+    <string name="bipper_send_affiliation_placeholder">ex. test (vide = tous les Bippers)</string>
+    <string name="bipper_send_dest_alerte">Groupe canal %1$s (défaut)</string>
+    <string name="bipper_send_dest_alerte_missing">Alerte introuvable</string>
+    <string name="bipper_send_dest_direct">Direct (nœud reçu)</string>
+    <string name="bipper_send_dest_label">Destination</string>
+    <string name="bipper_send_kind_alerte">Alerte</string>
+    <string name="bipper_send_kind_fin">Fin d\'alerte</string>
+    <string name="bipper_send_kind_info">Info</string>
+    <string name="bipper_send_kind_label">Type de message</string>
+    <string name="bipper_send_kind_secours">Secours</string>
+    <string name="bipper_send_kind_vigilance">Vigilance</string>
+    <string name="bipper_send_need_node">Sélectionnez un nœud pour un envoi direct.</string>
+    <string name="bipper_send_need_text">Saisissez le texte de l\'alerte, ou choisissez Fin.</string>
+    <string name="bipper_send_no_alerte_channel">Le canal nommé Alerte n\'est pas présent sur le nœud connecté.</string>
+    <string name="bipper_send_page_description">Composez #alerte|#secours|#vigilance|#info|#fin puis envoyez sur le canal Alerte ou en DM.</string>
+    <string name="bipper_send_page_title">Envoi alerte Gaulix</string>
+    <string name="bipper_send_pick_node">Choisir un nœud…</string>
+    <string name="bipper_send_preview">Trame à envoyer</string>
+    <string name="bipper_send_sent">Message envoyé</string>
+    <string name="bipper_send_submit">Envoyer</string>
+    <string name="bipper_send_text_label">Texte</string>
+    <string name="bipper_send_text_placeholder">ex. mise en alerte structure</string>
+    <string name="bipper_toast_command_err">Commande refusée</string>
+    <string name="bipper_toast_command_ok">Commande acceptée</string>
+    <string name="bipper_toast_not_connected">Aucun nœud actif pour envoyer les commandes pager.</string>
     <string name="ble_devices">Bluetooth Devices</string>
     <string name="ble_rssi_threshold_defaults_to_80">BLE RSSI threshold (defaults to -80)</string>
     <string name="blue">Blue</string>
@@ -1023,7 +1083,7 @@
     <!-- MESHTASTIC -->
     <string name="meshtastic">Meshtastic</string>
     <string name="meshtastic_alerts_notifications">Alert notifications</string>
-    <string name="meshtastic_app_name">Meshtastic</string>
+    <string name="meshtastic_app_name">Gaulix_bipper</string>
     <string name="meshtastic_broadcast_notifications">Broadcast message notifications</string>
     <string name="meshtastic_low_battery_notifications">Low battery notifications</string>
     <string name="meshtastic_low_battery_temporary_remote_notifications">Low battery notifications (favorite nodes)</string>

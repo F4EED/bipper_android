@@ -46,6 +46,8 @@ import org.meshtastic.core.resources.Res
 import org.meshtastic.core.resources.acknowledgements
 import org.meshtastic.core.resources.app_settings
 import org.meshtastic.core.resources.app_version
+import org.meshtastic.core.resources.bipper_nav_alerts
+import org.meshtastic.core.resources.bipper_nav_config
 import org.meshtastic.core.resources.bottom_nav_settings
 import org.meshtastic.core.resources.device_db_cache_limit
 import org.meshtastic.core.resources.device_db_cache_limit_summary
@@ -73,7 +75,9 @@ import org.meshtastic.core.ui.icon.Language
 import org.meshtastic.core.ui.icon.List
 import org.meshtastic.core.ui.icon.Memory
 import org.meshtastic.core.ui.icon.MeshtasticIcons
+import org.meshtastic.core.ui.icon.Notifications
 import org.meshtastic.core.ui.icon.PermScanWifi
+import org.meshtastic.core.ui.icon.Warning
 import org.meshtastic.core.ui.icon.Wifi
 import org.meshtastic.core.ui.util.rememberShowToastResource
 import org.meshtastic.feature.settings.component.ExpressiveSection
@@ -172,6 +176,21 @@ fun DesktopSettingsScreen(
 
             // App-local settings are only relevant when configuring the local node
             if (state.isLocal) {
+                ExpressiveSection(title = stringResource(Res.string.bipper_nav_alerts)) {
+                    ListItem(
+                        text = stringResource(Res.string.bipper_nav_alerts),
+                        leadingIcon = MeshtasticIcons.Notifications,
+                    ) {
+                        onNavigate(SettingsRoute.BipperAlertSend)
+                    }
+                    ListItem(
+                        text = stringResource(Res.string.bipper_nav_config),
+                        leadingIcon = MeshtasticIcons.Warning,
+                    ) {
+                        onNavigate(SettingsRoute.BipperConfig)
+                    }
+                }
+
                 ExpressiveSection(title = stringResource(Res.string.app_settings)) {
                     ListItem(
                         text = stringResource(Res.string.theme),

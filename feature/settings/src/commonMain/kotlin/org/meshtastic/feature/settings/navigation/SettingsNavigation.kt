@@ -259,6 +259,22 @@ fun EntryProviderScope<NavKey>.settingsGraph(backStack: NavBackStack<NavKey>) {
         val viewModel: AppFunctionsSettingsViewModel = koinViewModel()
         AppFunctionsSettingsScreen(viewModel = viewModel, onBack = dropUnlessResumed { backStack.removeLastOrNull() })
     }
+
+    entry<SettingsRoute.BipperAlertSend> {
+        val viewModel: org.meshtastic.feature.settings.bipper.BipperAlertSendViewModel = koinViewModel()
+        org.meshtastic.feature.settings.bipper.BipperAlertSendScreen(
+            viewModel = viewModel,
+            onBack = dropUnlessResumed { backStack.removeLastOrNull() },
+        )
+    }
+
+    entry<SettingsRoute.BipperConfig> {
+        val viewModel: org.meshtastic.feature.settings.bipper.BipperConfigViewModel = koinViewModel()
+        org.meshtastic.feature.settings.bipper.BipperConfigScreen(
+            viewModel = viewModel,
+            onBack = dropUnlessResumed { backStack.removeLastOrNull() },
+        )
+    }
 }
 
 /** Expect declaration for the platform-specific settings main screen. */

@@ -102,6 +102,8 @@ class NavigationConfigTest {
             SettingsRoute.DebugPanel,
             SettingsRoute.About,
             SettingsRoute.FilterSettings,
+            SettingsRoute.BipperAlertSend,
+            SettingsRoute.BipperConfig,
             // FirmwareRoute
             FirmwareRoute.FirmwareGraph,
             FirmwareRoute.FirmwareUpdate,

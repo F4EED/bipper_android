@@ -77,6 +77,7 @@ import org.meshtastic.core.model.util.TimeConstants
 import org.meshtastic.core.model.util.formatMuteRemainingTime
 import org.meshtastic.core.resources.Res
 import org.meshtastic.core.resources.are_you_sure
+import org.meshtastic.core.resources.bipper_nav_alerts
 import org.meshtastic.core.resources.cancel
 import org.meshtastic.core.resources.channel_invalid
 import org.meshtastic.core.resources.channels
@@ -115,6 +116,7 @@ import org.meshtastic.core.ui.icon.ExpandLess
 import org.meshtastic.core.ui.icon.ExpandMore
 import org.meshtastic.core.ui.icon.MarkChatRead
 import org.meshtastic.core.ui.icon.MeshtasticIcons
+import org.meshtastic.core.ui.icon.Notifications
 import org.meshtastic.core.ui.icon.SelectAll
 import org.meshtastic.core.ui.icon.VolumeMute
 import org.meshtastic.core.ui.icon.VolumeUp
@@ -132,6 +134,7 @@ fun ContactsScreen(
     onClickNodeChip: (Int) -> Unit,
     onNavigateToMessages: (String) -> Unit,
     onNavigateToNodeDetails: (Int) -> Unit,
+    onNavigateToAlertSend: () -> Unit,
     scrollToTopEvents: Flow<ScrollToTopEvent>?,
     activeContactKey: String?,
 ) {
@@ -219,6 +222,14 @@ fun ContactsScreen(
                 showNodeChip = ourNode != null && connectionState is ConnectionState.Connected,
                 canNavigateUp = false,
                 onNavigateUp = {},
+                actionsBeforeChip = {
+                    IconButton(onClick = onNavigateToAlertSend) {
+                        Icon(
+                            imageVector = MeshtasticIcons.Notifications,
+                            contentDescription = stringResource(Res.string.bipper_nav_alerts),
+                        )
+                    }
+                },
                 actions = {
                     val unreadCountTotal by viewModel.unreadCountTotal.collectAsStateWithLifecycle(0)
                     if (unreadCountTotal > 0) {
