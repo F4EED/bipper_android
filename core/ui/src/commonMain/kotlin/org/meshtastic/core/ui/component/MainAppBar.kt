@@ -19,7 +19,6 @@ package org.meshtastic.core.ui.component
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -40,16 +39,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.compositeOver
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.meshtastic.core.model.Node
 import org.meshtastic.core.resources.Res
 import org.meshtastic.core.resources.bipper_nav_alerts
-import org.meshtastic.core.resources.gaulix_rond
 import org.meshtastic.core.resources.meshtastic_app_name
 import org.meshtastic.core.resources.navigate_back
 import org.meshtastic.core.ui.icon.ArrowBack
@@ -136,7 +132,7 @@ fun MainAppBar(
     )
 }
 
-/** Reads [LocalEventBranding] to show event branding, or the Gaulix logo (tappable → envoi alerte). */
+/** Reads [LocalEventBranding] to show event branding, or the alert siren icon (tappable → envoi alerte). */
 @Composable
 private fun EventAwareBranding() {
     val eventEdition = LocalEventBranding.current
@@ -144,7 +140,6 @@ private fun EventAwareBranding() {
     if (eventEdition == null) {
         val brandingModifier =
             Modifier.size(32.dp)
-                .clip(CircleShape)
                 .then(
                     if (openAlertSend != null) {
                         Modifier.clickable(role = Role.Button, onClick = openAlertSend)
@@ -153,8 +148,7 @@ private fun EventAwareBranding() {
                     },
                 )
                 .padding(2.dp)
-        Image(
-            painter = painterResource(Res.drawable.gaulix_rond),
+        BipperAlertNavIcon(
             contentDescription =
             if (openAlertSend != null) {
                 stringResource(Res.string.bipper_nav_alerts)
@@ -162,7 +156,6 @@ private fun EventAwareBranding() {
                 stringResource(Res.string.meshtastic_app_name)
             },
             modifier = brandingModifier,
-            contentScale = ContentScale.Crop,
         )
         return
     }

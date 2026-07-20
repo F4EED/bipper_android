@@ -22,10 +22,8 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -50,11 +48,8 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
 import org.meshtastic.core.model.ConnectionState
@@ -70,7 +65,6 @@ import org.meshtastic.core.resources.connected
 import org.meshtastic.core.resources.connecting
 import org.meshtastic.core.resources.device_sleeping
 import org.meshtastic.core.resources.disconnected
-import org.meshtastic.core.resources.gaulix_rond
 import org.meshtastic.core.ui.navigation.icon
 import org.meshtastic.core.ui.util.LocalOpenBipperAlertSend
 import org.meshtastic.core.ui.viewmodel.UIViewModel
@@ -145,11 +139,9 @@ fun MeshtasticNavigationSuite(
                                     },
                                     state = rememberTooltipState(),
                                 ) {
-                                    Image(
-                                        painter = painterResource(Res.drawable.gaulix_rond),
+                                    BipperAlertNavIcon(
                                         contentDescription = stringResource(Res.string.bipper_nav_alerts),
-                                        modifier = Modifier.size(24.dp).clip(CircleShape),
-                                        contentScale = ContentScale.Crop,
+                                        modifier = Modifier.size(24.dp),
                                     )
                                 }
                             },

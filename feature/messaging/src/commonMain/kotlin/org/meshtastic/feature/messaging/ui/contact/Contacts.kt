@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyListState
@@ -104,6 +105,7 @@ import org.meshtastic.core.resources.okay
 import org.meshtastic.core.resources.select_all
 import org.meshtastic.core.resources.unmute
 import org.meshtastic.core.resources.unmute_selected
+import org.meshtastic.core.ui.component.BipperAlertNavIcon
 import org.meshtastic.core.ui.component.MainAppBar
 import org.meshtastic.core.ui.component.MeshtasticDialog
 import org.meshtastic.core.ui.component.MeshtasticImportFAB
@@ -224,9 +226,9 @@ fun ContactsScreen(
                 onNavigateUp = {},
                 actionsBeforeChip = {
                     IconButton(onClick = onNavigateToAlertSend) {
-                        Icon(
-                            imageVector = MeshtasticIcons.Notifications,
+                        BipperAlertNavIcon(
                             contentDescription = stringResource(Res.string.bipper_nav_alerts),
+                            modifier = Modifier.size(24.dp),
                         )
                     }
                 },

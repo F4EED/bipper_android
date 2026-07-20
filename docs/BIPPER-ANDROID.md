@@ -24,8 +24,8 @@ Application coordinateur / companion Meshtastic étendue pour le réseau **Gauli
 
 | Entrée | Emplacement |
 |:-------|:------------|
-| **Logo Gaulix** | Barre de navigation du bas, juste après **Messages** |
-| **Logo Gaulix** | Coin haut gauche (écrans racine sans bouton retour) |
+| **Icône alerte (gyrophare)** | Barre de navigation du bas, juste après **Messages** |
+| **Icône alerte (gyrophare)** | Coin haut gauche (écrans racine sans bouton retour) |
 | **Paramètres** | Section **Envoi alerte** / **Paramétrer le Bipper** |
 | Deep link | `…/bipper-alerts` → `SettingsRoute.BipperAlertSend` |
 
@@ -96,7 +96,8 @@ Espace disque recommandé : **≥ 15 Go** libres pour un build propre.
 | Élément | Valeur |
 |:--------|:-------|
 | Nom app | Gaulix_bipper (`meshtastic_app_name` / `app_name`) |
-| Logo | `core/resources/.../gaulix_rond.png` |
+| Logo | `core/resources/.../gaulix_rond.png` (README / branding) |
+| Icône envoi alerte | `ic_bipper_alert_siren.xml` — miroir web : `shared-assets/bipper_alert_siren.svg` → `client_web_MT_bipper/apps/web/public/images/` |
 | Package applicatif | hérité Meshtastic (`com.geeksville.mesh`) |
 
 ---
